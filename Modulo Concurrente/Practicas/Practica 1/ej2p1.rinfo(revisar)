@@ -1,0 +1,76 @@
+{2) Realice un programa en el que 4 robots limpien de papeles el ¿perímetro de un cuadrado de lado 20 en sentido horario, como se muestra en la figura: 
+El vértice inferior izquierdo del cuadrado se ubica en la esquina (10,10)
+Al finalizar, Robot1 debe informar la cantidad de esquinas que tienen solo flores, Robot2 informar la cantidad de esquinas que tienen solo papeles, Robot3 informar la cantidad de esquinas que tienen flores y los papeles y Robot 4 informar la cantidad de esquinas vacías.
+Al realizar este programa, analizar:
+a) ¿Cuántos tipos de robots se deben definir?
+4? preguntar al ayudante
+b) ¿Cómo deben declararse la o las áreas?
+privadas, y los vertices parcialmente compartidas? PREGUNTAR 
+c) ¿Existe riesgo de colisió
+si, en los vertices}
+
+programa ejemplo
+procesos
+  proceso recorrerAvenida(E numAv: numero)
+  comenzar
+    Pos(numAv, 1)
+    repetir 99
+      mover
+  fin
+areas
+  area1: AreaP(10,11,10,29)
+  vertice1: AreaPC(10,10,10,10)
+  area2: AreaP(11,10,29,10)
+  vertice2: AreaPC(10,30,10,30)
+  area3: AreaP(30,29,30,11)
+  vertice3: AreaPC(30,30,30,30) 
+  area4:AreaP(29,10,11,10)
+  vertice4: AreaPC(30,10,30,10)
+robots
+  robot robot1
+  comenzar
+    juntarFlores
+  fin
+  
+  robot robot2
+  comenzar
+    derecha
+    juntarPapeles
+  fin
+  
+  robot robot3
+  comenzar
+    repetir 2
+      derecha
+    juntarFlores
+    juntarPapeles
+  fin
+  
+  robot robot4
+  comenzar
+    repetir 3
+      derecha
+    cantidadEsqVacias
+variables
+  r1: robot1
+  r2: robot2
+  r3: robot3
+  r4: robot4
+comenzar
+  AsignarArea(r1,area1)
+  AsignarArea(r1,vertice1)
+  AsignarArea(r2,vertice2)
+  AsignarArea(r2,area2)
+  AsignarArea(r2,vertice2)
+  AsignarArea(r2,vertice3)
+  AsignarArea(r3,area3)
+  AsignarArea(r3,vertice3)
+  AsignarArea(r3,vertice4)
+  AsignarArea(r4,area4)
+  AsignarArea(r4,vertice4)
+  AsignarArea(r4,vertice1)
+  Iniciar(r1,10,10)
+  Iniciar(r2,10,30)
+  Iniciar(r3,30,30)
+  Iniciar(r4,30,10)
+fin
